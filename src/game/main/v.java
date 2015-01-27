@@ -9,5 +9,6 @@ public class v
 	public static Random rand = new Random();
 	public static String[] initLocations = { "beach", "forest", "volcano", "tundra" };
 	public static String name;
+	public static String last_name = "";
 	
 }

@@ -1,5 +1,7 @@
 package game.main;
 
+import game.constructors.Location;
+
 public class f
 {
 	
@@ -10,20 +12,15 @@ public class f
 		while (var0 == false) {
 			a.w(question);
 			_correct = a.r();
-			_correct = _correct.toLowerCase(); // makes the string into it's
-												// all lowercase equivalent;
-			// Checks if the user wrote anything (like `yes` or `no`). If not, 
-			//it will send an error message and skip all the code after the `continue;`.
-			if (_correct.isEmpty()) {
+			_correct = _correct.toLowerCase(); // makes the string into it's all lowercase equivalent;
+			if (_correct.isEmpty()) { // Checks if the user wrote anything (like `yes` or `no`). If not, it will send an error message and skip all the code after the `continue;`.
 				a.nw();
 				continue;
 			}
-			// Checks if the first letter of the answer (should be `yes` or `no`) starts 
-			// with a "y", which is the first letter of the word "yes".
+			// Checks if the first letter of the answer (should be `yes` or `no`) starts with a "y", which is the first letter of the word "yes".
 			else if (_correct.charAt(0) == 'y') {
 				var0 = true; // The loop will not loop after this itteration.
-				return true; // this will stop the `while` and return the
-								// player's name to whatever called it;
+				return true; // this will stop the `while` and return the player's name to whatever called it;
 			}
 			else if (_correct.charAt(0) == 'n')
 			{
@@ -40,6 +37,7 @@ public class f
 	// Requests a user input. Asks for their name.
 	public static String getName() 
 	{
+		if (v.last_name.equalsIgnoreCase("wever") || v.last_name.equalsIgnoreCase("bolduc")) { return "buttball"; }
 		String _name = null;
 		boolean var0 = false; // Should the while loop continue?
 		while (var0 == false)
@@ -47,13 +45,12 @@ public class f
 			a.w("Please input name: ");
 			_name = a.r(); // Makes `_name` the user's input.
 
-			// Tests whether the name (put all in lowercase letters) is equal to
-			// one of the creator's name.
+			// Tests whether the name (put all in lowercase letters) is equal to one of the creator's name.
+			if (_name.length() >= 20) { a.wl("Fuck that, your name is too long. Your name is now buttball."); return "buttball"; }
 			if (_name.equalsIgnoreCase("maxwell wever")
 					|| (_name.equalsIgnoreCase("émile bolduc"))) {
 				a.wl("Oh <censored> no, you ain't using my name!");
-				// skips to the next itteration of the while loop without executing 
-				//any code after the `continue;`.
+				// skips to the next itteration of the while loop without executing any code after the `continue;`.
 				continue;
 			}
 			else if (_name.equalsIgnoreCase("buttball") || _name.equalsIgnoreCase("butt ball"))
@@ -68,6 +65,9 @@ public class f
 		}
 		return null;
 	}
+	
+	public static String genArrivalMsg(String _str, Location _loc) { return _str + _loc.localized_name.toLowerCase() + "."; }
+	public static String genTempMsg(Location _loc) { return "It is " + _loc.temp.localized_name + " here."; }
 	
 	/*public final static void clearConsole()
 	{
