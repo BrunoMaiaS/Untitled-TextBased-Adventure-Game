@@ -1,7 +1,9 @@
-####FILES####
+# FILES #
+#########
 .project
 .classpath
 
-####FOLDERS####
+# FOLDERS #
+###########
 .settings/
 exports/
