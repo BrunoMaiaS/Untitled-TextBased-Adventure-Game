@@ -25,10 +25,17 @@ public class Configuration
 	
 	private void init()
 	{
-		this.loc_volcano = new FirstLocation("loc_volcano", "Volcano", new Monster[] { chicken, bewbs }, Temperature.VERY_HOT);
-		this.loc_beach = new FirstLocation("loc_beach", "Beach", new Monster[] {}, Temperature.WARM);
-		this.loc_forest = new FirstLocation("loc_forest", "Forest", new Monster[] {});		
-		this.loc_tundra = new FirstLocation("loc_tundra", "Tundra", new Monster[] {}, Temperature.VERY_COLD);
+		this.loc_volcano = new FirstLocation("loc_volcano", "Volcano", 
+				new Monster[] { chicken, bewbs }, Temperature.VERY_HOT);
+		
+		this.loc_beach = new FirstLocation("loc_beach", "Beach", 
+				new Monster[] {}, Temperature.WARM);
+		
+		this.loc_forest = new FirstLocation("loc_forest", "Forest", 
+				new Monster[] {});
+		
+		this.loc_tundra = new FirstLocation("loc_tundra", "Tundra", 
+				new Monster[] {}, Temperature.VERY_COLD);
 		
 		this.arrivalMessages();
 	}
